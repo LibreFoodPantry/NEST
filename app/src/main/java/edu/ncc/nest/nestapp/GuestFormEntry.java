@@ -14,7 +14,7 @@ public class GuestFormEntry {
     private String nameOfVolunteer;
     private String nccID;
 
-
+    // default constructor
     public GuestFormEntry()
     {
     }
