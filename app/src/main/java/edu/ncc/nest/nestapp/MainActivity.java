@@ -13,6 +13,12 @@ public class MainActivity extends AppCompatActivity {
         this.getWindow().setBackgroundDrawableResource(R.drawable.veg_table);
     }
 
+    /**
+     *
+     * onClick Listener. 
+     *
+     * @param v
+     */
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.forgotPass:
@@ -24,6 +30,8 @@ public class MainActivity extends AppCompatActivity {
             case R.id.log_in_button:
                 setContentView(R.layout.activity_choose);
                 break;
+
+
         }
     }
 }
