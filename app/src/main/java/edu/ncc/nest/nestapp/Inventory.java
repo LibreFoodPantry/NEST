@@ -3,6 +3,9 @@ package edu.ncc.nest.nestapp;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
+/**
+ * Maltese & Eburu
+ */
 public class Inventory extends AppCompatActivity {
 
     @Override

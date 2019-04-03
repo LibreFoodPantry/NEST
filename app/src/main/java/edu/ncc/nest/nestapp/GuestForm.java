@@ -47,6 +47,8 @@ public class GuestForm extends AppCompatActivity {
         boolean ins = false;
 
         //adding the values into the database if submit button is pressed
+        //values added are name, email, phone number, date, address, city
+        // and zip code of a helper.
         if(view.getId() == R.id.done_button){
             ins = db.insertData(name.getText().toString(), email.getText().toString(), phone.getText().toString(), date.getText().toString(), address.getText().toString(), city.getText().toString(), zip.getText().toString());
         }
