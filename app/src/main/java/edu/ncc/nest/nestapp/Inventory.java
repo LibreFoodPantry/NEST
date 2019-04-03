@@ -9,6 +9,7 @@ public class Inventory extends AppCompatActivity {
     /**
      * onCreate method -
      * loads the 'activity_inventory layout' which has only a TextView as a placeholder for now
+     * I will be working on this
      */
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
