@@ -15,7 +15,7 @@ public class MainActivity extends AppCompatActivity {
 
     /**
      *
-     * onClick Listener. 
+     * onClick method for login buttons
      *
      * @param v
      */
