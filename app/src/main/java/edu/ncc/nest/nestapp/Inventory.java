@@ -14,4 +14,17 @@ public class Inventory extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_inventory);
     }
+
+    /**
+     * Richard Yam- My search result
+     * 5.1.19
+     * I had attempted to find example codes for scanners, as stated in my 5-15.
+     *
+     * I found this link about building a scanner app in five minutes.  However, it wasn't done in
+     * Android Studios so I'm not sure I can get any ideas from this
+     *
+     * https://www.youtube.com/watch?v=QT7heo272ug
+     *
+     * Besides this, I currently haven't found any other ideas yet
+     */
 }
