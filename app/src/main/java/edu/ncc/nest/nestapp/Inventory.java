@@ -7,8 +7,12 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 
 public class Inventory extends AppCompatActivity {
+
+    private Button scanButton;
 
     @Override
     /**
@@ -21,6 +25,18 @@ public class Inventory extends AppCompatActivity {
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        scanButton = findViewById(R.id.scanBtn);
+        scanButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                openScanner();
+            }
+        });
+    }
+
+    public void openScanner() {
+        Intent intent = new Intent(this, Scan.class);
+        startActivity(intent);
     }
 
     //implements the menu options for the toolbar
