@@ -32,6 +32,10 @@
     <!-- String for menu_main -->
     <string name="home">HOME</string>
 
+    <!-- Sting for Scan Button -->
+    <string name="scan">Scan</string>
+
+
     <!-- String names for activity_guest_form activity -->
     <string name="email_lbl">Email Address</string>
     <string name="phone_lbl">Phone Number</string>

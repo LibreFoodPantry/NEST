@@ -7,9 +7,18 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import com.google.zxing.integration.android.IntentIntegrator;
+import com.google.zxing.integration.android.IntentResult;
+import android.view.View;;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.Button;
+import android.widget.TextView;
+import android.widget.Toast;
 
 public class Inventory extends AppCompatActivity {
-
+    private Button scanBtn;
+    private TextView formatTxt, contentTxt;
     @Override
     /**
      * onCreate method -
@@ -21,6 +30,12 @@ public class Inventory extends AppCompatActivity {
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        scanBtn = (Button)findViewById(R.id.scan_button);
+        formatTxt = (TextView)findViewById(R.id.scan_format);
+        contentTxt = (TextView)findViewById(R.id.scan_content);
+
+        scanBtn.setOnClickListener(this);
     }
 
     //implements the menu options for the toolbar
@@ -42,6 +57,28 @@ public class Inventory extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
+    public void onClick(View v){
+        if(v.getId()==R.id.scan_button){
+            IntentIntegrator scanIntegrator = new IntentIntegrator(this);
+            scanIntegrator.initiateScan();
+        }
+    }
+
+    public void onActivityResult(int requestCode, int resultCode, Intent intent) {
+        IntentResult scanningResult = IntentIntegrator.parseActivityResult(requestCode, resultCode, intent);
+        if (scanningResult != null) {
+            String scanContent = scanningResult.getContents();
+            String scanFormat = scanningResult.getFormatName();
+            formatTxt.setText("FORMAT: " + scanFormat);
+            contentTxt.setText("CONTENT: " + scanContent);
+        }
+        else{
+            Toast toast = Toast.makeText(getApplicationContext(),
+                    "No scan data received!", Toast.LENGTH_SHORT);
+            toast.show();
+        }
+    }
+
     /**
      * home method - goes to the home screen
      */
@@ -51,15 +88,12 @@ public class Inventory extends AppCompatActivity {
     }
 
     /**
-     * Richard Yam- My search result
-     * 5.1.19
-     * I had attempted to find example codes for scanners, as stated in my 5-15.
+     * Richard Yam- Source of code
+     * 5/13/19
+     *https://android-coffee.com/tutorial-how-to-create-barcode-reader-app-in-android-studio-1-4/
      *
-     * I found this link about building a scanner app in five minutes.  However, it wasn't done in
-     * Android Studios so I'm not sure I can get any ideas from this
-     *
-     * https://www.youtube.com/watch?v=QT7heo272ug
-     *
-     * Besides this, I currently haven't found any other ideas yet
+     * Attempted to implement the code found to this app.  Code requires to download an app made by
+     * ZXing team.  There's an error with a line when importing in the code.  I was also told by another
+     * member of the group that they already built a scanner app, so my code may not be necessary.
      */
 }
